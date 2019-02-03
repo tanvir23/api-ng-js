@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app="myModule">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>CliteHD Angular.js Example</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="tanvir">
+    <script src="https://unpkg.com/clitehd-external-api"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.11/angular.min.js"></script>
+
+</head>
+<body ng-controller="myCtrl">
+    <button id="createConfButton" ng-click="makeCall()">Click to Create Room</button>
+    <button id="joinConfButton" ng-click="receiveCall()">Click to Join Room</button>
+    <script>
+    var myApp = angular.module('myModule', []);
+    myApp.controller('myCtrl', function($scope) {
+        $scope.makeCall = function(){
+            createRoom('apollo', 'fakeP@55');
+        }
+        $scope.receiveCall = function(){
+            joinRoom('apollo');
+        }
+    });
+    </script>
+</body>
+</html>
